@@ -72,6 +72,12 @@ function blob_fixup() {
         vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so)
             "${SIGSCAN}" -p "1F 0A 00 94" -P "1F 20 03 D5" -f "${2}"
             ;;
+        system_ext/lib64/lib-imsvideocodec.so)
+            "${PATCHELF}" --add-needed "lib-imsvtshim.so" "${2}"
+            ;;
+        system_ext/lib64/libimsmedia_jni.so)
+            "${PATCHELF}" --add-needed "lib-imsvtshim.so" "${2}"
+            ;;
     esac
 }
 

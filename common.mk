@@ -546,3 +546,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.set_touch_timer_ms=200 \
     ro.surface_flinger.use_color_management=true \
     ro.surface_flinger.wcg_composition_dataspace=143261696
+
+# Shims
+PRODUCT_PACKAGES += \
+    lib-imsvtshim
